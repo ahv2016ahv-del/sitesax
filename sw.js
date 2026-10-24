@@ -1,0 +1,1 @@
+self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(clients.claim()));self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).catch(()=>new Response('آفلاین هستید؛ اتصال اینترنت را بررسی کنید.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}})))});
